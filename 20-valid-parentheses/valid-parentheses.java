@@ -11,7 +11,7 @@ class Solution {
             if(ch == '{' || ch == '[' || ch== '(') {
                 stack.push(ch);
             } else {
-                if(stack.size()  == 0) {
+                if(stack.size() == 0) {
                     return false;
                 }
                 Character lastInserted = stack.pop();
@@ -52,6 +52,7 @@ class Solution {
     */
 
     public boolean isValid(String s) {
-        return solution(s);
+        // return solution(s);
+        return solutionReadAble(s);
     }
 }
