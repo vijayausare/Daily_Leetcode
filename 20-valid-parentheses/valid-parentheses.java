@@ -5,12 +5,15 @@ class Solution {
         if(s.length() ==1) {
             return false;
         }
-        Stack<Character> stack = new Stack<>();
 
+        Stack<Character> stack = new Stack<>();
         for(Character ch: s.toCharArray()) {
             if(ch == '{' || ch == '[' || ch== '(') {
                 stack.push(ch);
             } else {
+                if(stack.size()  == 0) {
+                    return false;
+                }
                 Character lastInserted = stack.pop();
                 if(ch =='}' && lastInserted != '{' ||
                     ch ==']' && lastInserted != '[' ||
@@ -22,15 +25,6 @@ class Solution {
         }
         return stack.size() == 0;
     }
-
-
-
-
-
-
-
-
-
 
     public boolean solution(String s) {
         Stack<Character> stack  = new Stack<>();
