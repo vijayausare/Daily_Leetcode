@@ -2,6 +2,9 @@ class Solution {
 
 
     public boolean solutionReadAble(String s) {
+        if(s.length() ==1) {
+            return false;
+        }
         Stack<Character> stack = new Stack<>();
 
         for(Character ch: s.toCharArray()) {
@@ -17,9 +20,7 @@ class Solution {
                 }
             }
         }
-
         return stack.size() == 0;
-
     }
 
 
