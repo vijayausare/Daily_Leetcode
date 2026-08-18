@@ -1,13 +1,31 @@
 class Solution {
-    public boolean isValid(String s) {
-        Stack<Character> stk  = new Stack<>();
-        for(char c : s.toCharArray()) {
-            if(c=='[') stk.push(']');
-            else if(c=='{') stk.push('}');
-            else if(c=='(') stk.push(')');
-            else if(stk.isEmpty() || stk.pop()!=c) return false;
+
+    public boolean solution(String s) {
+        Stack<Character> stack  = new Stack<>();
+        for(char c : s.toCharArray()) {  // for n times
+            if(c=='[') {
+                stack.push(']');
+            }
+            else if(c=='{') {
+                stack.push('}');
+            }
+            else if(c=='(') {
+                stack.push(')');
+            }
+            else if(stack.isEmpty() || stack.pop()!=c) {
+                return false;
+            }
         }
 
-        return stk.isEmpty();
+        return stack.isEmpty();
+    }
+
+    /* Analysis 
+        Time: O(n)
+        Space: O(n)
+    */
+
+    public boolean isValid(String s) {
+        return solution(s);
     }
 }
