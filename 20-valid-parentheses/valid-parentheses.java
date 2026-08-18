@@ -1,5 +1,36 @@
 class Solution {
 
+
+    public boolean solutionReadAble(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for(Character ch: s.toCharArray()) {
+            if(ch == '{' || ch == '[' || ch== '(') {
+                stack.push(ch);
+            } else {
+                Character lastInserted = stack.pop();
+                if(ch =='}' && lastInserted != '{' ||
+                    ch ==']' && lastInserted != '[' ||
+                    ch ==')' && lastInserted != '('
+                ) {
+                    return false;
+                }
+            }
+        }
+
+        return stack.size() == 0;
+
+    }
+
+
+
+
+
+
+
+
+
+
     public boolean solution(String s) {
         Stack<Character> stack  = new Stack<>();
         for(char c : s.toCharArray()) {  // for n times
