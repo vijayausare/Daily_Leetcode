@@ -1,17 +1,17 @@
 class Solution {
 
     public void bruteForceApproach(int[] nums) {
-        int[] temp = nums;
+        int[] tempArray = nums;
 
         int index = 0;
-        for(int num: temp) {
+        for(int num: tempArray) {
             if(num!=0){
                 nums[index++] = num;
             }
         }
 
-        for(int i = index; i< nums.length; i++) {
-            nums[i] = 0;
+        for(int idx = index; idx< nums.length; idx++) {
+            nums[idx] = 0;
         }
     }
 
