@@ -40,6 +40,22 @@ class Solution {
         */
     }
 
+    public void twoPointerApproach(int[] nums) {
+        int first = 0;
+        int second = first + 1;
+
+        while(second <= nums.length) {
+            if(nums[first] == 0 && nums[second] !=0) {
+                nums[first] = nums[second];
+                nums[second] = 0;
+                first++;
+                second++;
+            } else {
+                second++;
+            }
+        }
+    }
+
     public void moveZeroes(int[] nums) {
         // this.bruteForceApproach(nums);
         this.bitOptimized(nums);
