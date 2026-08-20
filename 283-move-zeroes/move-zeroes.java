@@ -44,7 +44,7 @@ class Solution {
         int first = 0;
         int second = first + 1;
 
-        while(second <= nums.length) {
+        while(second < nums.length) {
             if(nums[first] == 0 && nums[second] !=0) {
                 nums[first] = nums[second];
                 nums[second] = 0;
@@ -54,10 +54,34 @@ class Solution {
                 second++;
             }
         }
+         /*
+        Analysis:
+        Time: O(n)
+        Space: O(1)
+        */
+    }
+
+    public void betterApproachInOnePass(int[] nums) {
+        int writeIndex = 0;
+        for(int readIndex = 0; readIndex< nums.length; readIndex++) {
+            if(nums[readIndex] !=0) {
+                int temp = nums[readIndex];
+                nums[readIndex] = nums[writeIndex];
+                nums[writeIndex++] = temp;
+            }
+        }
+
+        /*
+        Analysis:
+        Time: O(n) + O(n) = O(2n) = O(n)
+        Space: O(1) ref only
+        */
     }
 
     public void moveZeroes(int[] nums) {
         // this.bruteForceApproach(nums);
-        this.bitOptimized(nums);
+        // this.bitOptimized(nums);
+        // this.twoPointerApproach(nums);
+        betterApproachInOnePass(nums);
     }
 }
