@@ -1,5 +1,6 @@
 class Solution {
-    public List<String> fizzBuzz(int n) {
+
+    public List<String> bruteForce(int n) {
         List<String> result= new ArrayList<>();
         for(int num = 1; num<= n; num++) {
             if(num % 3 == 0 && num %5 ==0) {
@@ -14,5 +15,11 @@ class Solution {
         }
 
         return result;
+    }
+
+
+    
+    public List<String> fizzBuzz(int n) {
+        return bruteForce(n);
     }
 }
