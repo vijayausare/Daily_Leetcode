@@ -22,6 +22,7 @@ class Solution {
     }
 
 
+    // merge sort
     public void twoPointerApproach(int[] nums1, int m, int[] nums2, int n) {
 
         int[] nums1Copy = Arrays.copyOf(nums1, m);
