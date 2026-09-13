@@ -83,7 +83,7 @@ class Solution {
     }
 
     public boolean isPalindrome(String s) {
-        return reverseStringApproach(s);
-        // return towPointerApproach(s);
+        //return reverseStringApproach(s); // slow
+        return towPointerApproach(s); // fast
     }
 }
