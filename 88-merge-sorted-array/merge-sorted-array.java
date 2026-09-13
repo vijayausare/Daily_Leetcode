@@ -31,7 +31,7 @@ class Solution {
         int idx = 0;
 
         while(p1 < m && p2 < n) {
-            if(nums1[p1] < nums2[p2]) {
+            if(nums1Copy[p1] < nums2[p2]) {
                 nums1[idx] = nums1Copy[p1];
                 p1++;
             } else {
@@ -41,10 +41,21 @@ class Solution {
             idx++;
         }
 
+        while(p2 < n) {
+            nums1[idx] = nums2[p2];
+            idx++;
+            p2++;
+        }
 
+        while(p1 < m) {
+            nums1[idx] = nums1Copy[p1];
+            idx++;
+            p1++;
+        }
     }
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        bruteForceApproach(nums1, m , nums2, n);
+        // bruteForceApproach(nums1, m , nums2, n);
+        twoPointerApproach(nums1, m , nums2, n);
     }
 }
