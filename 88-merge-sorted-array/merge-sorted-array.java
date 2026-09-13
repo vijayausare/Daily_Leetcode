@@ -24,7 +24,7 @@ class Solution {
 
     public void twoPointerApproach(int[] nums1, int m, int[] nums2, int n) {
 
-        int[] nums1Copy = Arrays.copyOf(nums1, nums1.length);
+        int[] nums1Copy = Arrays.copyOf(nums1, m);
 
         int p1 = 0;
         int p2 = 0;
@@ -52,6 +52,16 @@ class Solution {
             idx++;
             p1++;
         }
+
+       /*
+        1. TIME COMPLEXITY: O(m + n)
+        - Copying the first m elements: O(m)
+        - Merging m + n elements: O(m + n)
+        - Final: O(m + n)
+
+        2. SPACE COMPLEXITY: O(m)
+        - The copied array contains only m elements.
+        */
     }
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
