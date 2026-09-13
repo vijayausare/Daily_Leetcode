@@ -20,6 +20,30 @@ class Solution {
         - However, DualPivotQuickSort uses O(log(m + n)) internal stack space for recursion.
     */
     }
+
+
+    public void twoPointerApproach(int[] nums1, int m, int[] nums2, int n) {
+
+        int[] nums1Copy = Arrays.copyOf(nums1, nums1.length);
+
+        int p1 = 0;
+        int p2 = 0;
+        int idx = 0;
+
+        while(p1 < m && p2 < n) {
+            if(nums1[p1] < nums2[p2]) {
+                nums1[idx] = nums1Copy[p1];
+                p1++;
+            } else {
+                nums1[idx] = nums2[p2];
+                p2++;
+            }
+            idx++;
+        }
+
+
+    }
+
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         bruteForceApproach(nums1, m , nums2, n);
     }
